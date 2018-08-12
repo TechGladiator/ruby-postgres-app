@@ -1,7 +1,14 @@
-# README
+# Ruby PostgreSQL App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To get started, make sure you have PostgreSQL and Ruby installed on your local machine.
+
+If you haven't already, download and install (following instructions pertaining to your system):
+
+PostgreSQL: https://www.postgresql.org/download/
+
+Ruby: https://www.ruby-lang.org/en/downloads/
+
+Rails: https://www.tutorialspoint.com/ruby-on-rails/rails-installation.htm
 
 Things you may want to cover:
 
