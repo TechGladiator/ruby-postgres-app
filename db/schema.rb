@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_13_203315) do
+ActiveRecord::Schema.define(version: 2018_08_13_211336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 2018_08_13_203315) do
     t.date "creation_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "import_id"
+    t.index ["import_id"], name: "index_records_on_import_id"
   end
 
 end
