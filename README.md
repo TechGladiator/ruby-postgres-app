@@ -92,7 +92,7 @@ First, stop the server by pressing `ctrl+c`.
 Then, generate your resource:
 
 ```
-$ bin/rails generate scaffold Record name:string address:string address_2:string city:string state:string zip:string purpose:string property_owner:string creation_date:date
+$ bin/rails generate scaffold Record name:string address:string address_2:string city:string state:string zip:string purpose:string property_owner:string creation_date:date lat:numeric long:numeric
 ```
 
 Start the app again:
