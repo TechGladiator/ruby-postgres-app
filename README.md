@@ -62,6 +62,22 @@ Again, in the terminal enter:
 $ bin/rails db:setup
 ```
 
+## Start the app
+
+In your terminal:
+
+```
+$ bin/rails server
+```
+
+Or, a shortcut:
+
+```
+$ bin/rails s
+```
+
+Then go to http://localhost:3000/ in your browser to see the rails welcome page.
+
 ### Create Rails Resources
 
 Edit `config/routes.rb` to resemble this:
