@@ -85,7 +85,7 @@ $ bin/rails s
 
 Then go to http://localhost:3000/ in your browser to see the rails welcome page.
 
-### Create Rails Resources
+## Create Rails Resources
 
 First, stop the server by pressing `ctrl+c`.
 
