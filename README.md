@@ -103,4 +103,4 @@ $ bin/rails s
 
 Then navigate to http://localhost:3000/records in your browser.
 
-You can start creating, reading, updating, and deleting records. You data will be saved to PostgreSQL.
+You can start creating, reading, updating, and deleting records. Your data will be saved to PostgreSQL.
