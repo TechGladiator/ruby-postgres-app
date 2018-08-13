@@ -23,6 +23,8 @@ $ gem install rails
 
 ```
 $ rails new <your-app-name-here> -d postgresql
+  ...
+$ cd <your-app-name-here>
 ```
 
 ## Setup the database
@@ -62,12 +64,17 @@ Again, in the terminal enter:
 $ bin/rails db:setup
 ```
 
+On Windows replace bin/ with ruby bin\ anywhere it is used:
+```
+$ ruby bin\rails db:setup
+```
+
 ## Start the app
 
 In your terminal:
 
 ```
-$ bin/rails server
+$ bin/rails server // this ensure the app runs on the version of rails it was initialized with
 ```
 
 Or, a shortcut:
@@ -80,70 +87,20 @@ Then go to http://localhost:3000/ in your browser to see the rails welcome page.
 
 ### Create Rails Resources
 
-Edit `config/routes.rb` to resemble this:
-```
-Rails.application.routes.draw do
-  resources :records
-end
-```
+First, stop the server by pressing `ctrl+c`.
 
-This will setup the conventional routes that most Rails resources will have.
-
-Enter this into the terminal:
+Then, generate your resource:
 
 ```
-$ bin/rails routes
+$ bin/rails generate scaffold Record name:string address:string address_2:string city:string state:string zip:string purpose:string property_owner:string creation_date:date
 ```
 
-This results in:
+Start the app again:
 
 ```
-                   Prefix Verb   URI Pattern                                                                              Controller#Action
-                  records GET    /records(.:format)                                                                       records#index
-                          POST   /records(.:format)                                                                       records#create
-               new_record GET    /records/new(.:format)                                                                   records#new
-              edit_record GET    /records/:id/edit(.:format)                                                              records#edit
-                   record GET    /records/:id(.:format)                                                                   records#show
-                          PATCH  /records/:id(.:format)                                                                   records#update
-                          PUT    /records/:id(.:format)                                                                   records#update
-                          DELETE /records/:id(.:format)                                                                   records#destroy
+$ bin/rails s
 ```
 
-Then in the terminal:
-```
-bin/rails db:setup
-```
+Then navigate to http://localhost:3000/records in your browser.
 
-## Start the app
-
-```
-$ cd <your-app-name-here>
-$ bin/rails server // this ensure the app runs on the version of rails it was initialized with
-```
-
-On Windows replace bin/ with ruby bin\ anywhere it is used:
-```
-$ ruby bin\rails server
-```
-
-Then navigate to http://localhost:3000 to see the app's welcome page.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You can start creating, reading, updating, and deleting records. You data will be saved to PostgreSQL.
