@@ -56,6 +56,12 @@ production:
   username: <deploy-username>
 ```
 
+Again, in the terminal enter:
+
+```
+$ bin/rails db:setup
+```
+
 ### Create Rails Resources
 
 Edit `config/routes.rb` to resemble this:
