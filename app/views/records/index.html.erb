@@ -14,8 +14,6 @@
       <th>Purpose</th>
       <th>Property owner</th>
       <th>Creation date</th>
-      <th>Lat</th>
-      <th>Long</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -32,8 +30,6 @@
         <td><%= record.purpose %></td>
         <td><%= record.property_owner %></td>
         <td><%= record.creation_date %></td>
-        <td><%= record.Lat %></td>
-        <td><%= record.Long %></td>
         <td><%= link_to 'Show', record %></td>
         <td><%= link_to 'Edit', edit_record_path(record) %></td>
         <td><%= link_to 'Destroy', record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
