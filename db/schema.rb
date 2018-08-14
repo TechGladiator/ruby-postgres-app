@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_14_142623) do
+ActiveRecord::Schema.define(version: 2018_08_14_143222) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,4 +21,23 @@ ActiveRecord::Schema.define(version: 2018_08_14_142623) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "records", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "address_2"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.string "purpose"
+    t.string "property_owner"
+    t.date "creation_date"
+    t.decimal "lat"
+    t.decimal "long"
+    t.bigint "import_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["import_id"], name: "index_records_on_import_id"
+  end
+
+  add_foreign_key "records", "imports"
 end

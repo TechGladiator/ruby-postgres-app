@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @record.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @record.address %>
+</p>
+
+<p>
+  <strong>Address 2:</strong>
+  <%= @record.address_2 %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @record.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @record.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @record.zip %>
+</p>
+
+<p>
+  <strong>Purpose:</strong>
+  <%= @record.purpose %>
+</p>
+
+<p>
+  <strong>Property owner:</strong>
+  <%= @record.property_owner %>
+</p>
+
+<p>
+  <strong>Creation date:</strong>
+  <%= @record.creation_date %>
+</p>
+
+<p>
+  <strong>Lat:</strong>
+  <%= @record.lat %>
+</p>
+
+<p>
+  <strong>Long:</strong>
+  <%= @record.long %>
+</p>
+
+<p>
+  <strong>Import:</strong>
+  <%= @record.import %>
+</p>
+
+<%= link_to 'Edit', edit_record_path(@record) %> |
+<%= link_to 'Back', records_path %>

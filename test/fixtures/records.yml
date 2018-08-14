@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  address: MyString
+  address_2: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  purpose: MyString
+  property_owner: MyString
+  creation_date: 2018-08-14
+  lat: 
+  long: 
+  import: one
+
+two:
+  name: MyString
+  address: MyString
+  address_2: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  purpose: MyString
+  property_owner: MyString
+  creation_date: 2018-08-14
+  lat: 
+  long: 
+  import: two
