@@ -16,5 +16,7 @@ class CreateRecords < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
+
+    add_foreign_key :records, :states, column: :state, primary_key: :short_name
   end
 end
