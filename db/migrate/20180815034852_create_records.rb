@@ -1,17 +1,17 @@
 class CreateRecords < ActiveRecord::Migration[5.2]
   def change
     create_table :records do |t|
-      t.string :name
-      t.string :address
+      t.string :name, null: false
+      t.string :address, null: false
       t.string :address_2
-      t.string :city
+      t.string :city, null: false
       t.references :state, foreign_key: true
-      t.string :zip
-      t.string :purpose
-      t.string :property_owner
-      t.date :creation_date
-      t.numeric :lat
-      t.numeric :long
+      t.string :zip, null: false
+      t.string :purpose, null: false
+      t.string :property_owner, null: false
+      t.date :creation_date, null: false
+      t.numeric :lat, null: false
+      t.numeric :long, null: false
       t.references :import, foreign_key: true
 
       t.timestamps
