@@ -5,7 +5,7 @@ class CreateRecords < ActiveRecord::Migration[5.2]
       t.string :address, null: false
       t.string :address_2
       t.string :city, null: false
-      t.references :state, foreign_key: true
+      t.string :state, limit: 2, null: false
       t.string :zip, null: false
       t.string :purpose, null: false
       t.string :property_owner, null: false
