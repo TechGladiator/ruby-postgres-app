@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_15_031312) do
+ActiveRecord::Schema.define(version: 2018_08_15_034852) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,10 +22,29 @@ ActiveRecord::Schema.define(version: 2018_08_15_031312) do
     t.index ["import_name"], name: "imports_import_name_key", unique: true
   end
 
+  create_table "records", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "address", null: false
+    t.string "address_2"
+    t.string "city", null: false
+    t.string "state", limit: 2, null: false
+    t.string "zip", null: false
+    t.string "purpose"
+    t.string "property_owner"
+    t.date "creation_date", null: false
+    t.decimal "lat", null: false
+    t.decimal "long", null: false
+    t.integer "import_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "states", primary_key: "short_name", id: :string, limit: 2, force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "records", "imports", name: "records_import_id_fkey"
+  add_foreign_key "records", "states", column: "state", primary_key: "short_name", name: "records_statecode_fkey"
 end
