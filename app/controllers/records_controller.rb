@@ -1,6 +1,6 @@
 class RecordsController < ApplicationController
   before_action :set_import
-  
+
   def create
     @record = @import.records.create(record_params)
     redirect_to @import
@@ -8,6 +8,12 @@ class RecordsController < ApplicationController
 
   def edit
     @record = Record.find(params[:id])
+  end
+
+  def update
+    @record = Record.find(params[:id])
+    @record.update(record_params)
+    redirect_to @import
   end
 
   private
