@@ -62,11 +62,13 @@ Again, in the terminal enter:
 
 ```
 $ bin/rails db:setup
+$ bin/rails db:migrate
 ```
 
 On Windows replace bin/ with ruby bin\ anywhere it is used:
 ```
 $ ruby bin\rails db:setup
+$ ruby bin\rails db:migrate
 ```
 
 ## Start the app
@@ -92,7 +94,44 @@ First, stop the server by pressing `ctrl+c`.
 Then, generate your resource:
 
 ```
-$ bin/rails generate scaffold Record name:string address:string address_2:string city:string state:string zip:string purpose:string property_owner:string creation_date:date lat:numeric long:numeric
+$ bin/rails generate scaffold Import import_name:string
+```
+
+A migration file will be generated in db/migrate that will look like this:
+
+```ruby
+class CreateImports < ActiveRecord::Migration[5.2]
+  def change
+    create_table :imports do |t|
+      t.string :import_name
+
+      t.timestamps
+    end
+  end
+end
+
+```
+
+Edit it to look like this:
+
+```ruby
+class CreateImports < ActiveRecord::Migration[5.2]
+  def change
+    create_table :imports do |t|
+      t.string :import_name, null: false
+      t.index ["import_name"], name: "imports_import_name_key", unique: true
+
+      t.timestamps
+    end
+  end
+end
+
+```
+
+Then, back in the terminal:
+
+```
+$ bin/rails db:migrate // needs to be run everytime you generate a scaffold, model, or migration
 ```
 
 Start the app again:
@@ -101,6 +140,6 @@ Start the app again:
 $ bin/rails s
 ```
 
-Then navigate to http://localhost:3000/records in your browser.
+Then navigate to http://localhost:3000/imports in your browser.
 
-You can start creating, reading, updating, and deleting records. Your data will be saved to PostgreSQL.
+You can start creating, reading, updating, and deleting imports. Your data will be saved to PostgreSQL.
