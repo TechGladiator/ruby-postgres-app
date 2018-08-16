@@ -10,4 +10,7 @@
   <%= record.creation_date %>
   <%= record.lat %>
   <%= record.long %>
+  <div class="record-admin">
+    <%= link_to "Edit", edit_import_record_path(@import, record) %>
+  </div>
 </div>
