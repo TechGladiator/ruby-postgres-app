@@ -12,5 +12,6 @@
   <%= record.long %>
   <div class="record-admin">
     <%= link_to "Edit", edit_import_record_path(@import, record) %>
+    <%= link_to "Delete", [@import, record], method: :delete %>
   </div>
 </div>
