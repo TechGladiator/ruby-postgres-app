@@ -5,5 +5,14 @@
   <%= @import.import_name %>
 </p>
 
+<div id="records">
+  <h5>Records</h5>
+  <% @import.records.each do |record| %>
+    <div>
+      <%= record.name %>
+    </div>
+  <% end %>
+</div>
+
 <%= link_to 'Edit', edit_import_path(@import) %> |
 <%= link_to 'Back', imports_path %>
