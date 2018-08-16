@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   resources :imports
 
-  get    '/records',          to: 'records#index', as: 'records'
-  post   '/records',          to: 'records#create'
-  get    '/records/new',      to: 'records#new',   as: 'new_record'
-  get    '/records/:id',      to: 'records#show',  as: 'record'
-  get    '/records/:id/edit', to: 'records#edit',  as: 'edit_record'
-  patch  '/records/:id',      to: 'records#update'
-  delete '/records/:id',      to: 'records#destroy'
-  
+  get    'imports/:import_id/records',          to: 'records#index', as: 'import_records'
+  post   'imports/:import_id/records',          to: 'records#create'
+  get    'imports/:import_id/records/new',      to: 'records#new',   as: 'new_import_record'
+  get    'imports/:import_id/records/:id',      to: 'records#show',  as: 'import_record'
+  get    'imports/:import_id/records/:id/edit', to: 'records#edit',  as: 'edit_import_record'
+  patch  'imports/:import_id/records/:id',      to: 'records#update'
+  delete 'imports/:import_id/records/:id',      to: 'records#destroy'
+
 end
