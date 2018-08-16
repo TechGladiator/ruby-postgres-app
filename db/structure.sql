@@ -6,6 +6,7 @@ CREATE TABLE imports (
 );
 
 CREATE TABLE states (
+    "id" bigserial NOT NULL,
 	"name" varchar NOT NULL,
 	"short_name" varchar(2) NOT NULL,
     CONSTRAINT states_pkey PRIMARY KEY ("short_name")
