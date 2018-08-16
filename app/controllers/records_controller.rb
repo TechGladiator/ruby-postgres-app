@@ -1,17 +1,21 @@
 class RecordsController < ApplicationController
+  before_action :set_import
+  
   def create
-    @import = Import.find(params[:import_id])
     @record = @import.records.create(record_params)
     redirect_to @import
   end
 
   def edit
-    @import = Import.find(params[:import_id])
     @record = Record.find(params[:id])
   end
 
   private
     def record_params
       params.require(:record).permit(:name, :address, :address_2, :city, :state, :zip, :purpose, :property_owner, :creation_date, :lat, :long)
+    end
+
+    def set_import
+      @import = Import.find(params[:import_id])
     end
 end
