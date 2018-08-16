@@ -8,9 +8,7 @@
 <div id="records">
   <h5>Records</h5>
   <% @import.records.each do |record| %>
-    <div>
-      <%= record.name %>
-    </div>
+    <%= render partial: "records/record", locals: {record: record} %>
   <% end %>
 </div>
 
