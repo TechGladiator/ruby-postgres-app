@@ -1,23 +1,22 @@
 class RecordsController < ApplicationController
   before_action :set_import
 
+  before_action :set_record, only: [:edit, :update, :destroy]
+
   def create
     @record = @import.records.create(record_params)
     redirect_to @import
   end
 
   def edit
-    @record = Record.find(params[:id])
   end
 
   def update
-    @record = Record.find(params[:id])
     @record.update(record_params)
     redirect_to @import
   end
 
   def destroy
-    @record = Record.find(params[:id])
     @record.destroy
     redirect_to @import
   end
@@ -29,5 +28,9 @@ class RecordsController < ApplicationController
 
     def set_import
       @import = Import.find(params[:import_id])
+    end
+
+    def set_record
+      @record = Record.find(params[:id])
     end
 end
