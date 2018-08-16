@@ -7,9 +7,7 @@
 
 <div id="records">
   <h5>Records</h5>
-  <% @import.records.each do |record| %>
-    <%= render partial: "records/record", locals: {record: record} %>
-  <% end %>
+  <%= render @import.records %>
 </div>
 
 <%= link_to 'Edit', edit_import_path(@import) %> |
