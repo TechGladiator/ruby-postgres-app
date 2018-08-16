@@ -6,7 +6,9 @@
 </p>
 
 <div id="records">
-  <h4>Records</h4>
+  <% if @import.records.present? %>
+    <h4>Records</h4>
+  <% end %>
   <%= render @import.records %>
   <h5>Add a record</h5>
   <%= render partial: "records/form", locals: {record: @import.records.new} %>
