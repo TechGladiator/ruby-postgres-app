@@ -16,7 +16,6 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
-//= require_tree .
 //= require papaparse.min.js
 //= require globals.js
 //= require modal.js
@@ -26,3 +25,4 @@
 //= require validate.js
 //= require geocode.js
 //= require app.js
+//= require_tree .
