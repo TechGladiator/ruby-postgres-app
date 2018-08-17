@@ -17,3 +17,12 @@
 //= require popper
 //= require bootstrap
 //= require_tree .
+//= require papaparse.min.js
+//= require globals.js
+//= require modal.js
+//= require fixError.js
+//= require parse.js
+//= require buildTable.js
+//= require validate.js
+//= require geocode.js
+//= require app.js
