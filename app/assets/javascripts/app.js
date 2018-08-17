@@ -120,5 +120,3 @@ function saveRecords() {
     postData(importName);
   });
 }
-
-main();
