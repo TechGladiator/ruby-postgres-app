@@ -1,24 +1,3 @@
 // Place all the styles related to the Stun controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-/* cursor pointer when hover over file picker */
-.custom-file-input,
-.input-group-append,
-.latlong,
-.deleteRow {
-  cursor: pointer;
-}
-
-.invisible {
-  position: absolute!important;
-}
-
-/* apply Source Code Pro Font to editable fields */
-[contenteditable="true"] {
-  font-family: 'Source Code Pro', monospace;
-}
-
-[contenteditable="true"] th,
-[contenteditable="true"] td {
-  box-shadow: inset 0px 0px 0px 2px black;
-}
