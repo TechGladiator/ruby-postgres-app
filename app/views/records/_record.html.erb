@@ -1,0 +1,17 @@
+<div>
+  <%= record.name %>
+  <%= record.address %>
+  <%= record.address_2 %>
+  <%= record.city %>
+  <%= record.state %>
+  <%= record.zip %>
+  <%= record.purpose %>
+  <%= record.property_owner %>
+  <%= record.creation_date %>
+  <%= record.lat %>
+  <%= record.long %>
+  <div class="record-admin">
+    <%= link_to "Edit", edit_import_record_path(@import, record) %>
+    <%= link_to "Delete", [@import, record], method: :delete %>
+  </div>
+</div>

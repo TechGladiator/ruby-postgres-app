@@ -5,5 +5,14 @@
   <%= @import.import_name %>
 </p>
 
+<div id="records">
+  <% if @import.records.present? %>
+    <h4>Records</h4>
+  <% end %>
+  <%= render @import.records %>
+  <h5>Add a record</h5>
+  <%= render partial: "records/form", locals: {record: @import.records.new} %>
+</div>
+
 <%= link_to 'Edit', edit_import_path(@import) %> |
 <%= link_to 'Back', imports_path %>
