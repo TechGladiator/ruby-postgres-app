@@ -62,19 +62,28 @@ function postData(importName) {
 
 function searchImports(searchString) {
   let searchTerm;
+  let url;
   if ($(searchString).val()) {
     searchTerm = $(searchString).val();
   } else {
     searchTerm = searchString;
   }
+  if (searchTerm == '') {
+    url = '/imports.json';
+  } else {
+    url = '/imports/' + searchTerm;
+  }
   $.ajax({
-    url: '/imports/' + searchTerm,
+    url: url,
     type: 'get',
     success: (res) => {
+      console.log(searchTerm);
       if (res.status) {
         modal(res.status, res.message);
       } else {
         let resHTML = '<div class="d-flex justify-content-center mb-3" role="group" aria-label="button group">';
+        // res = JSON.stringify(res);
+        console.log(res);
         res.forEach(e => {
           console.log(e.importname);
           resHTML += `<button type="button" class="btn btn-dark m-1" onclick="searchRecords('${e.importname}')">${e.importname}</button>`;
