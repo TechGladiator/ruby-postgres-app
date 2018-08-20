@@ -63,7 +63,7 @@ function postData(importName) {
 function searchImports(searchString) {
   let searchTerm;
   let url;
-  if ($(searchString).val()) {
+  if ($(searchString).val() != '#searchImports') {
     searchTerm = $(searchString).val();
   } else {
     searchTerm = searchString;
