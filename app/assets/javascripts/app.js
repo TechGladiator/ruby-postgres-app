@@ -85,8 +85,8 @@ function searchImports(searchString) {
         // res = JSON.stringify(res);
         console.log(res);
         res.forEach(e => {
-          console.log(e.importname);
-          resHTML += `<button type="button" class="btn btn-dark m-1" onclick="searchRecords('${e.importname}')">${e.importname}</button>`;
+          console.log(e.import_name);
+          resHTML += `<button type="button" class="btn btn-dark m-1" onclick="searchRecords('${e.import_name}')">${e.import_name}</button>`;
         });
         resHTML += '</div>';
         $('.csv').html(resHTML);
